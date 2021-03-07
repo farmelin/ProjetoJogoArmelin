@@ -111,15 +111,18 @@ public class ProjetoJogoArmelin01 {
 				case 1:
 					System.out.println("Ok, corrajosa guerreira, você enfrentará o Imbatível Minotauro no centro do labirinto");
 					break;
+				//Faltou pular para outra parte do jogo neste ponto....
 				case 2:
 					System.out.println("Realmente eu concordo que encarar uma coisa desse tamanho não é para qualquer um....");
 					break;
 				case 3:
 					System.out.println("Mas faça-me o favor !!! Tenha o mínimo de compostura mulher !!!");
+					System.out.println("GAME OVER");
+					System.out.println("--- E nada mais deveria aparecer.... Erro na linha 120");					
 					break;
 				default:
-					System.out.println("Você não soube brincar e está fora do jogo.....");
-					
+					System.out.println("Você não soube brincar e está fora do jogo. Game Over....");
+					System.out.println("--- E nada mais deveria aparecer.... Erro na linha 124");					
 				}
 		}
 		// O que acontece agora
@@ -145,6 +148,7 @@ public class ProjetoJogoArmelin01 {
 		else {
 			System.out.println("Você perdeu a proteção dos Deuses e foi banido do jogo");
 			System.out.println("GAME OVER");
+			System.out.println("--- E nada mais deveria aparecer.... Erro na linha 150");
 		}
 
 		// Fase 1
@@ -152,58 +156,68 @@ public class ProjetoJogoArmelin01 {
 		case 3:
 		// Escrevar o que fazer no caso de ser Jasão
 		 
-			System.out.println("Jasão");
+			System.out.println("Jasão, meu caro, eu não tive tempo de desenvolver a sua historia....");
 	
 		default:
-			System.out.println("Algo deu errado !!!");
+			System.out.println("Game Over !!!");
 
 	}
 		
 		// FASE 2
 		switch (opcaoh) {
 			case 1:
-		// Enfrentar o Minotauro no Labirinto
-				System.out.println("Destemida guerreira, visto que resolveu enfrentar o Minotauro no centro do labirinto, os Deuses lhe concederam uma benção:");
-				System.out.println("Você foi agraciada com uma nova espada muito mais letal qua a sua. Boa sorte na sua empreitada !!!");
-				System.out.println("Com essa espada você poderá aplicar 3 golpes no Minotauro com valores entre 1 e 5");
-				System.out.println("E se a soma dos seus números for maior do que a do Minotauro, você vencou a batalha");
-				System.out.println("MAS, se qualquer um dos números informado for MAIOR do que 5,0, o valor considerado será 0,01");
-				for (int j = 1; j<4;j++) {
-					n = leitor.nextDouble();
-					if (n > 5.0) {
-						n = 0.01;
-						}
-					somah = somah + n;
-					num = random.nextDouble() * 5;
-					somam = somam + num; 
-				}
-				if (somah > num) {
-					System.out.println("Parabéns, você venceu !!!");
-				}
-				else if (num > somah) {
-					System.out.println("Parabéns para o Minotauro, o Eterno Campeão !!!");
-				}
-				else {
-					System.out.println("Os Deuses devem ter intervido a seu favor para que houvesse esse empate....");
+				if (opcaoh == 1) {
+					// Enfrentar o Minotauro no Labirinto
+					System.out.println("Destemida guerreira, visto que resolveu enfrentar o Minotauro no centro do labirinto, os Deuses lhe concederam uma benção:");
+					System.out.println("Você foi agraciada com uma nova espada muito mais letal qua a sua. Boa sorte na sua empreitada !!!");
+					System.out.println("Com essa espada você poderá aplicar 3, veja bem, TRÊS GOLPES no Minotauro com valores entre 1 e 5");
+					System.out.println("E se a soma dos seus números for maior do que a do Minotauro, você vencou a batalha");
+					System.out.println("MAS, se qualquer um dos números informado for MAIOR do que 5,0, o valor considerado será 0,01");
+					for (int j = 1; j<4;j++) {
+						n = leitor.nextDouble();
+						if (n > 5.0) {
+							n = 0.01;
+							}
+						somah = somah + n;
+						num = random.nextDouble() * 5;
+						somam = somam + num; 
+					}
+					System.out.println("Pontos Hipólita: " + somah);
+					System.out.println("Pontos Minotauro: " + somam);
+					if (somah > somam) {
+						System.out.println("Parabéns, você venceu !!!");
+					}
+					else if (somam > somah) {
+						System.out.println("Parabéns para o Minotauro, o Eterno Campeão !!!");
+					}
+					else {
+						System.out.println("Os Deuses devem ter intervido a seu favor para que houvesse esse empate....");
+					}
 				}
 			case 2:
-			//Emboscar o Minotauro
-				System.out.println("Como você resolveu atacar o Minotauro de emboscada, você terá apenas uma chance de vencer");
-				System.out.println("Informe um número entre 1 e 4,5 e se o seu número for maior do que o do Minotauro, você vencou a batalha");
-				System.out.println("MAS, se o número informado for MAIOR do que 4,5, o valor considerado será 0,01");
-				n = leitor.nextDouble();
-				if (n > 4.5) {
-					n = 0.01;
-				}
-				num = random.nextDouble() * 5;
-				if (n > num) {
-					System.out.println("Parabéns, você venceu !!!");
-				}
-				else if (num > n) {
-					System.out.println("Parabéns para o Minotauro, o Eterno Campeão !!!");
-				}
-				else {
-					System.out.println("Os Deuses devem ter intervido a seu favor para que houvesse esse empate....");
+				if (opcaoh == 2) {
+					//Emboscar o Minotauro
+					System.out.println("Como você resolveu atacar o Minotauro de emboscada, você terá apenas UMA ÚNICA chance de vencer");
+					System.out.println("Informe um número entre 1 e 3,9 e se o seu número for maior do que o do Minotauro, você vencou a batalha");
+					System.out.println("MAS, se o número informado for MAIOR do que 3,9, o valor considerado será 0,01");
+					System.out.println("Ahhhhhh...... eu quase esqueci de comentar... O golpe do Minotauro pode valer até 5.....");
+					n = leitor.nextDouble();
+					if (n > 3.9) {
+						n = 0.01;
+					}
+					num = random.nextDouble() * 5;
+					System.out.println("Pontos Hipólita: " + n);
+					System.out.println("Pontos Minotauro: " + num);
+					if (n > num) {
+						System.out.println("Parabéns, você venceu !!!");
+					}
+					else if (num > n) {
+						System.out.println("Parabéns para o Minotauro, o Eterno Campeão !!!");
+					}
+					else {
+						System.out.println("Os Deuses devem ter intervido a seu favor para que houvesse esse empate....");
+					}
+
 				}
 			case 3:
 				System.out.println("Game Over !!!");
